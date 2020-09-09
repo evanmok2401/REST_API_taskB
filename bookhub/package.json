@@ -1,0 +1,20 @@
+{
+  "name": "bookhub",
+  "version": "1.0.0",
+  "description": "An implemetnation of a simple Javascript backend and REST API to GET, POST, PUT, DELETE",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "api",
+    "rest",
+    "json"
+  ],
+  "author": "Evan Mok",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "mongoose": "^5.10.3"
+  }
+}
