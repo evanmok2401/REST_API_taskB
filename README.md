@@ -1,6 +1,4 @@
-[![Build Status](https://travis-ci.org/evanmok2401/REST_API_taskB.svg?branch=master)](https://travis-ci.org/evanmok2401/REST_API_taskB)
-
-# REST_API_taskB
+# REST_API_taskB [![Build Status](https://travis-ci.org/evanmok2401/REST_API_taskB.svg?branch=master)](https://travis-ci.org/evanmok2401/REST_API_taskB)
 
 A simple Javascript Backend and REST API to GET, POST, PUT, DELETE. Tests are written using Mocha and Chai. This repository serves as a self-learning exercise.
 
