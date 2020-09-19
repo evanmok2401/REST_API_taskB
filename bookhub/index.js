@@ -4,6 +4,9 @@ let express = require('express');
 let bodyParser = require('body-parser');
 // Import Mongoose
 let mongoose = require('mongoose');
+
+let config = require('config');
+
 // Initialise the app
 let app = express();
 
@@ -15,7 +18,7 @@ app.use(bodyParser.urlencoded({
 }));
 app.use(bodyParser.json());
 // Connect to Mongoose and set connection variable
-mongoose.connect('mongodb://localhost/bookhub', { useNewUrlParser: true, useUnifiedTopology: true });
+mongoose.connect(config.DBHost, { useNewUrlParser: true, useUnifiedTopology: true });
 var db = mongoose.connection;
 
 // Added check for DB connection
@@ -36,3 +39,5 @@ app.use('/api', apiRoutes);
 app.listen(port, function () {
     console.log("Running Bookhub on port " + port);
 });
+
+module.exports = app; // for testing

@@ -65,7 +65,7 @@ exports.update = function (req, res) {
 };
 // Handle delete book
 exports.delete = function (req, res) {
-    Book.remove({
+    Book.deleteOne({
         _id: req.params.book_id
     }, function (err, book) {
         if (err)
