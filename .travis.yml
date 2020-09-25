@@ -11,3 +11,5 @@ script:
 deploy:
   provider: script
   script: sls deploy
+  on:
+    branch: master
