@@ -4,11 +4,12 @@ let express = require('express');
 let bodyParser = require('body-parser');
 // Import Mongoose
 let mongoose = require('mongoose');
-
+// Import Config
 let config = require('config');
-
 // Initialise the app
 let app = express();
+// Import Serverless
+let sls = require('serverless-http')
 
 // Import routes
 let apiRoutes = require("./api-routes");
@@ -18,7 +19,8 @@ app.use(bodyParser.urlencoded({
 }));
 app.use(bodyParser.json());
 // Connect to Mongoose and set connection variable
-mongoose.connect(config.DBHost, { useNewUrlParser: true, useUnifiedTopology: true });
+var connectionString = config.DBHost || "mongodb+srv://evanmok2401:GCBQ7e3FGrU5VDr@bookhub.softc.mongodb.net/bookhub?retryWrites=true&w=majority"
+mongoose.connect(connectionString, { useNewUrlParser: true, useUnifiedTopology: true });
 var db = mongoose.connection;
 
 // Added check for DB connection
@@ -41,3 +43,4 @@ app.listen(port, function () {
 });
 
 module.exports = app; // for testing
+module.exports.run = sls(app)
